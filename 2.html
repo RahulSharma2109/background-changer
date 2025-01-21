@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body {
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            transition: background 0.5s ease;
+        }
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        img {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <button onclick="changeBackground('https://wallpapers.com/images/featured/1920-x-1080-car-4sdj5tojfx747aly.jpg')">Image 1</button>
+    <button onclick="changeBackground('https://www.supercars.net/blog/wp-content/uploads/2020/09/wallpaperflare.com_wallpaper-1-1.jpg')">Image 2</button>
+    <button onclick="changeBackground('https://images.unsplash.com/photo-1704340142770-b52988e5b6eb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8Y2FyfGVufDB8fDB8fHww')">Image 3</button>
+    <button onclick="resetBackground()">Reset</button>
+</div>
+<script>
+    function changeBackground(url) {
+        document.body.style.backgroundImage = `url(${url})`;
+    }
+    function resetBackground() {
+        document.body.style.backgroundImage = '';
+    }
+</script>
+
+</body>
+</html>
